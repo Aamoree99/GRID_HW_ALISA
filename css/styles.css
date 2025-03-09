@@ -1,0 +1,348 @@
+:root {
+  --main-color: #fffaf0;
+  --accent-color: #f8d7da;
+  --text-color: #6b4f4f;
+  --button-hover: #d48b8b;
+  --filter-active: #e6a6a6;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+header {
+  background: var(--accent-color);
+  padding: 20px;
+  border-bottom: 3px solid #e6a6a6;
+}
+
+h1 {
+  font-size: 80px;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.slogan {
+  font-size: 18px;
+  color: #a56c6c;
+}
+
+.info-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 20px;
+  justify-content: center;
+  max-width: 1500px;
+  margin: auto;
+}
+
+
+.card {
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--accent-color);
+  border-radius: 10px;
+  background: var(--accent-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  flex-direction: column;
+}
+
+.card-front {
+  overflow: hidden;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.card-back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+  background: white url("../img/paw.png") repeat center center;
+  background-size: contain;
+}
+
+.card-back h3,
+.card-back p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.card-back h3 {
+  font-size: 20px;
+}
+
+.adopt-btn {
+  background: var(--filter-active);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.adopt-btn:hover {
+  background: var(--button-hover);
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.story {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: left;
+  border-left: 5px solid var(--accent-color);
+}
+
+.story h3 {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.story p {
+  margin-top: 5px;
+  color: var(--text-color);
+}
+
+.story::before {
+  content: "🐾";
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.stories-grid .story:nth-child(even) {
+  text-align: right;
+  border-left: none;
+  border-right: 5px solid var(--accent-color);
+}
+
+.stories-grid .story:nth-child(even)::before {
+  left: auto;
+  right: -25px;
+}
+
+.adopt-call {
+  background: var(--accent-color);
+  padding: 20px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.adopt-call p {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.adopt-call button {
+  background: var(--filter-active);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.adopt-call button:hover {
+  background: var(--button-hover);
+}
+
+footer {
+  background: var(--text-color);
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.info-bar button {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.info-bar button:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.info-bar button.active {
+  background: var(--filter-active);
+  color: white;
+  border-color: var(--filter-active);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+}
+
+.modal-content button {
+  background: var(--filter-active);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.modal-content button:hover {
+  background: var(--button-hover);
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.notification {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: var(--text-color);
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+#help-button {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  margin: 20px;
+}
+
+#help-button:hover {
+  background: var(--button-hover);
+}
+
+@media (max-width: 600px) {
+  .info-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

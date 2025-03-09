@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Котячий Дім</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Котячий Дім</h1>
+  <p class="slogan">Знайдіть собі маленького пухнастого друга!</p>
+  <div class="info-bar">
+    <button data-filter="all" class="active">Усі</button>
+    <button data-filter="kitten">Кошенята</button>
+    <button data-filter="adult">Дорослі</button>
+  </div>
+</header>
+
+<main>
+  <div id="grid-container" class="grid-container">
+
+  </div>
+</main>
+
+<section class="stories">
+  <h2>Історії щасливих котиків</h2>
+  <div id="stories-container" class="stories-grid">
+
+  </div>
+</section>
+
+
+<section class="adopt-call">
+  <p>Хочете взяти котика додому? Зв’яжіться з нами!</p>
+  <button id="adopt-button">Обрати друга</button>
+</section>
+
+<div id="adopt-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Заповніть форму</h2>
+    <p>Ми зателефонуємо вам найближчим часом!</p>
+    <form id="adopt-form">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <button type="submit">Надіслати</button>
+    </form>
+  </div>
+</div>
+
+
+<button id="help-button">Допомогти притулку</button>
+
+<footer>
+  <p>📍 Адреса: вул. Пухнаста, 10</p>
+  <p>📧 Email: catshelter@mail.ua</p>
+  <p>Допоможіть нам піклуватися про маленьких пухнастиків!</p>
+</footer>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Як допомогти притулку?</h2>
+    <p>Ви можете допомогти притулку, принісши корм, ліки або зробивши донат. Дякуємо за вашу підтримку!</p>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
